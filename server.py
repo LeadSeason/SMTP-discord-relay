@@ -2,12 +2,16 @@ from discord import Webhook, AsyncWebhookAdapter
 import discord
 from aiosmtpd.controller import Controller
 
+from dotenv import load_dotenv
 import aiohttp
 import asyncio
+import os
 import logging
 import datetime
 
-url = "<set discord web hook here>"
+load_dotenv()
+
+url = os.getenv("DISCORD_WEBHOOK_URL")
 
 
 class RelayHandler:
